@@ -43,6 +43,7 @@ fi
 #echo "sending file $filename"
 deviceid=""
 configfile=~/.config/kdesend.conf
+
 #Problème quand il y a plus d'un device vu le 2021-02-20 13:53:35
 ids=$(kdeconnect-cli -a --id-only)
 list=$(kdeconnect-cli -a)
@@ -50,7 +51,7 @@ echo "Available devices : "
 echo "${list[@]}" 
 if [ -f "$configfile" ]; 
 then
-   echo "config file found "
+   echo "config file found '$configfile' "
    deviceid=$(cat $configfile)
    printf "deviceid=${YELL} $deviceid ${NC}\n"
 fi
